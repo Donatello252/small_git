@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판</title>
+</head>
+<body>
+<table th:border="1" th:style="${'border-collapse:collapse'}">
+    <tr>
+        <th>name</th>
+        <th>property</th>
+        <th>level</th>
+        <th>species</th>
+        <th>atk</th>
+        <th>def</th>
+    </tr>
+    <tr th:each="card : ${cards}">
+        <td><a th:text="${card.name}"></a></td>
+        <td th:text="${card.property}"></td>
+        <td th:text="${card.level}"></td>
+        <td th:text="${card.species}"></td>
+        <td th:text="${card.atk}"></td>
+        <td th:text="${card.def}"></td>
+    </tr>
+</table>
+<button th:onclick="'location.href=\'/cardlist\''" th:text="전체카드"></button>
+<button th:onclick="'location.href=\'/small\''" th:text="스몰월드"></button>
+
+</body>
+</html>

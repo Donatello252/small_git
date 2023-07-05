@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+  .layout {
+    width : 900px;
+    margin : 0 auto;
+    margin-top : 40px;
+  }
+
+  .layout {
+    width : 900px;
+    margin : 0 auto;
+    margin-top : 40px;
+  }
+
+</style>
+
+
+<body>
+<div class = "layout">
+    <form action="/small_world" method="post">
+        start : <input name="start" type="text"> <br>
+        end : <input name="end" type="text"> <br>
+
+        <button type="submit">스몰월드 확인</button>
+    </form>
+
+    <button th:onclick="'location.href=\'/cards\''" th:text="카드리스트로"></button>
+</div>
+
+
+
+</body>
+
+</html>
