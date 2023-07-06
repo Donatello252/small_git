@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+<form th:action="@{/cardmodifysave/{cardname}(cardname=${card.name})}" method="post">
+  <input name="name" type="text" th:value="${card.name}" > <br>
+
+  <input name="property" type="text" th:value="${card.property}" > <br>
+  <input name="species" type="text" th:value="${card.species}" > <br>
+  <input name="level" type="text" th:value="${card.level}" > <br>
+  <input name="atk" type="text" th:value="${card.atk}" > <br>
+  <input name="def" type="text" th:value="${card.def}" > <br>
+
+  <button type="submit"> 저장 </button>
+</form>
+
+
+<br>
+<a th:href= "@{http://www.google.co.kr/search?q={cardname}(cardname=${card.name})}"> <p th:text="카드검색" /></a>
+<br>
+
+<button th:onclick="'location.href=\'/cardlist\''" th:text="전체카드"></button>
+<button th:onclick="'location.href=\'/small\''" th:text="스몰월드"></button>
+
+
+</body>
+</html>

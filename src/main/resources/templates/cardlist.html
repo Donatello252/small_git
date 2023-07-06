@@ -16,7 +16,7 @@
         <th>def</th>
     </tr>
     <tr th:each="card : ${cards}">
-        <td><a th:text="${card.name}"></a></td>
+        <td><a th:text="${card.name}" th:href="@{/card(cardname=${card.name})}"></a></td>
         <td th:text="${card.property}"></td>
         <td th:text="${card.level}"></td>
         <td th:text="${card.species}"></td>
@@ -24,6 +24,8 @@
         <td th:text="${card.def}"></td>
     </tr>
 </table>
+
+
 <button th:onclick="'location.href=\'/cardlist\''" th:text="전체카드"></button>
 <button th:onclick="'location.href=\'/small\''" th:text="스몰월드"></button>
 
