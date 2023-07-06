@@ -45,9 +45,10 @@ public class CardService {
 
         List<CardDTO> cardDTOList = new ArrayList<>();
         for (CardEntity cardEntity: cardEntityList) {
-
             cardDTOList.add(CardDTO.toCardDTO(cardEntity));
         }
+
+
         return new PageImpl<CardDTO>(cardDTOList);
 
     }
@@ -65,6 +66,8 @@ public class CardService {
             }
 
         }
+
+
 
         return new PageImpl<CardDTO>(cardDTOList);
     }
@@ -85,8 +88,13 @@ public class CardService {
 
     }
 
-
-
-
-
+    public void update(String cardname, CardDTO cardDTO){
+        if (cardname.equals(cardDTO.getName())) {
+            cardRepository.save(CardEntity.toSaveEntity(cardDTO));
+        }
+        else{
+            cardRepository.deleteById(cardname);
+            cardRepository.save(CardEntity.toSaveEntity(cardDTO));
+        }
+    }
 }

@@ -13,5 +13,17 @@
 <p th:text="${card.atk}"></p>
 <p th:text="${card.def}"></p>
 
+
+<br>
+<a th:href= "@{http://www.google.co.kr/search?q={cardname}(cardname=${card.name})}"> <p th:text="카드검색" /></a>
+<br>
+<form th:action="@{/cardmodify/{cardname}(cardname=${card.name})}" method="post">
+  <button type="submit">정보 수정</button>
+</form>
+
+<button th:onclick="'location.href=\'/cardlist\''" th:text="전체카드"></button>
+<button th:onclick="'location.href=\'/small\''" th:text="스몰월드"></button>
+
+
 </body>
 </html>
